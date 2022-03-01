@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from 'vue'
+import Router from 'vue-router'
 
 Vue.use(Router)
 
-// layout 
+// layout
 import Layout from '@/layout'
 
 /**
@@ -51,7 +51,7 @@ export const constantRoutes = [
     path: '/auth-redirect',
     component: () => import('@/views/login/auth-redirect'),
     hidden: true
-  },
+  }
 
 ]
 
@@ -60,19 +60,19 @@ export const constantRoutes = [
  * 需要根据用户角色动态加载的路由
  */
 export const asyncRoutes = [
-  
+
 ]
 
 const createRouter = () => new Router({
-  //mode: 'history', //require service support
-  scrollBehavior: () => ({y:0 }),
+  // mode: 'history', //require service support
+  scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
-});
-const router = createRouter();
+})
+const router = createRouter()
 
 export function resetRouter() {
-  const newRouter = createRouter();
+  const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
 }
 
-export default router;
+export default router

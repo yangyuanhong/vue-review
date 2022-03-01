@@ -10,10 +10,16 @@ import '@/styles/index.scss'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './icons'
 
+import './icons'
+import './permission' // permission control
+import './utils/error-log' // error log
+if (process.env.NODE_ENV !== 'production') {
+  const { mockXHR } = require('../mock')
+  mockXHR()
+}
 Vue.use(Element, {
-  size: Cookies.get('size') || 'medium', //设置element-ui 的默认大小
+  size: Cookies.get('size') || 'medium' // 设置element-ui 的默认大小
   // locale: enLang //如果使用中文，无需设置，请删除
 })
 

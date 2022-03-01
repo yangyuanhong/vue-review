@@ -1,14 +1,20 @@
 <template>
   <div class="social-signup-container">
     <div class="sign-btn" @click="wechatHandleClick('wechat')">
-      <span class="wx-svg-container"
-        ><svg-icon icon-class="wechat" class="icon"
+      <span
+        class="wx-svg-container"
+      ><svg-icon
+        icon-class="wechat"
+        class="icon"
       /></span>
       WeChat
     </div>
     <div class="sign-btn" @click="tencentHandleClick('tencent')">
-      <span class="qq-svg-container"
-        ><svg-icon icon-class="qq" class="icon"
+      <span
+        class="qq-svg-container"
+      ><svg-icon
+        icon-class="qq"
+        class="icon"
       /></span>
       QQ
     </div>
@@ -17,18 +23,18 @@
 
 <script>
 export default {
-  name: "SocialSignin",
+  name: 'SocialSignin',
   methods: {
     wechatHandleClick(thirdpart) {
-      console.log(thirdpart);
-      alert("ok");
+      console.log(thirdpart)
+      alert('ok')
     },
     tencentHandleClick(thirdpart) {
-      console.log(thirdpart);
-      alert("ok");
-    },
-  },
-};
+      console.log(thirdpart)
+      alert('ok')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

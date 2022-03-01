@@ -1,6 +1,6 @@
 <!--
- * @Title: 
- * @Description: 
+ * @Title:
+ * @Description:
  * @Author: yuanhong.yang
  * @Date: 2022-02-21 11:41:15
  * @LastEditors: yuanhong.yang
@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="clickOut">
-    <div v-clickoutside="handleClose" v-show="flag"></div>
+    <div v-show="flag" v-clickoutside="handleClose" />
   </div>
 </template>
 
@@ -16,19 +16,19 @@
 // @ is an alias to /src
 import Clickoutside from '../directive/clickoutside'
 export default {
-  name: 'clickOut',
+  name: 'ClickOut',
   components: {},
-  data() {
-    return {
-      flag: true,
-    }
-  },
   directives: {
     Clickoutside
   },
+  data() {
+    return {
+      flag: true
+    }
+  },
   methods: {
     handleClose() {
-      this.flag = false;
+      this.flag = false
     }
   }
 }

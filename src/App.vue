@@ -1,6 +1,6 @@
 <!--
  * @Title: 项目入口
- * @Description: 
+ * @Description: app
  * @Author: yuanhong.yang
  * @Date: 2022-02-21 11:41:15
  * @LastEditors: yuanhong.yang
@@ -8,12 +8,12 @@
 -->
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: 'App'
 }
 </script>
