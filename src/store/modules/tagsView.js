@@ -70,7 +70,7 @@ const actions = {
 
   delView({ dispatch, state }, view) {
     return new Promise(resolve => {
-      dispatch('deleVisitedView', view)
+      dispatch('delVisitedView', view)
       dispatch('delCachedView', view)
       resolve({
         visitedViews: [...state.visitedViews],
@@ -140,7 +140,7 @@ const actions = {
 }
 
 export default {
-  namespace: true,
+  namespaced: true,
   state,
   mutations,
   actions

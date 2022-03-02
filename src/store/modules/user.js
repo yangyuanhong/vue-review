@@ -51,7 +51,7 @@ const actions = {
 
         const { roles, name, avatar, introduction } = data
         if (!roles || roles.length <= 0) {
-          reject('getInfo:roles must be a a non-null array!')
+          reject('getInfo：roles 必须是一个非空数组！')
         }
         commit('SET_ROLES', roles)
         commit('SET_NAME', name)
@@ -88,6 +88,7 @@ const actions = {
     })
   },
 
+  // dynamically modify permissions
   async changeRoles({ commit, dispatch }, role) {
     const token = role + '-token'
 
@@ -98,14 +99,19 @@ const actions = {
 
     resetRouter()
 
+    // generate accessible routes map based on roles
     const accessRoutes = await dispatch('permission/generateRoutes', roles, { root: true })
-    router.addRoutes(accessRoutes)
+    // dynamically add accessible routes
+    accessRoutes.forEach(route => {
+      router.addRoute(route)
+    })
 
+    // reset visited views and cached views
     dispatch('tagsView/delAllViews', null, { root: true })
   }
 }
 export default {
-  namespace: true,
+  namespaced: true,
   state,
   mutations,
   actions

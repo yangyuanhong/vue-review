@@ -9,6 +9,7 @@
 <template>
   <div class="clickOut">
     <div v-show="flag" v-clickoutside="handleClose" />
+    <el-button @click="pageGo">401</el-button>
   </div>
 </template>
 
@@ -29,6 +30,9 @@ export default {
   methods: {
     handleClose() {
       this.flag = false
+    },
+    pageGo() {
+      this.$router.push('/401')
     }
   }
 }
